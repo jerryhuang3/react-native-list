@@ -8,6 +8,9 @@ export default function App() {
   const [isAddModal, setIsAddModal] = useState(false);
 
   const addGoal = input => {
+    if (input.length === 0) {
+      return;
+    }
     setGoals(goals => [
       ...goals,
       { id: Math.random().toString(), value: input }
